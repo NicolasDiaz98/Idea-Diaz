@@ -3,9 +3,10 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    padding: 0;
 }
 
-/*INDEX*/
+/*ENCABEZADO*/
 
 header {
     background-color: rgb(144, 53, 230);
@@ -49,4 +50,72 @@ span {
 }
 
 
+/*JUEGO*/
+
+.card__Gatito {
+    width: 650px;
+    height: 650px;
+    background-color: rgb(144, 53, 230);
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.57);
+}
+
+.card__Gatito > img {
+    width: 500px;
+    height: 500px;
+    margin: 75px;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+
+.card__Final {
+    width: 1000px;
+    height: 1000px;
+    background-color: rgb(144, 53, 230);
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.57);
+}
+
+.card__Final > img {
+    width: 700px;
+    height: 700px;
+    margin-left: 150px;
+    margin-top: 60px;
+    border-radius: 5px;
+}
+
+.h2__card {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Secular One', sans-serif;
+    padding-top: 10px;
+}
+
+.h2__cardFinal {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Secular One', sans-serif;
+    padding-top: 20px;
+    line-height: 70px;
+}
+
+.h2__cardFinal--negro {
+    color: black;
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Secular One', sans-serif;
+    line-height: 70px;
+    margin-bottom: 50px;
+}
+
+.h2__cardFinal--negro > a {
+    color: rgb(144, 53, 230);
+    text-decoration: none;
+}
 
