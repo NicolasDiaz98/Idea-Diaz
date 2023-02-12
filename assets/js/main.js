@@ -5,13 +5,10 @@ const muereGatito = 2;
 const nombre = prompt("Bienvenido!! Ingresa tu nombre para jugar")
 
 const mensajes = {
-    saludo: function(nombre) {
-        console.log("Hola " + nombre + ", te presento mi juego en contra de la muerte de los gatitos, espero que te guste!")
-    },
-    despedida: function(nombre) {
-        console.log(nombre + ", gracias por jugar!!")
-    },
+    saludo: (nombre) => console.log("Hola " + nombre + ", te presento mi juego en contra de la muerte de los gatitos, espero que te guste!"),
 
+    despedida: (nombre) => console.log(nombre + ", gracias por jugar!!"),
+    
 }
 
 mensajes.saludo(nombre);
