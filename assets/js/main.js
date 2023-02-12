@@ -2,7 +2,19 @@
 let vidaGatito = 7;
 const salvarGatito = 0;
 const muereGatito = 2;
-let nombre = prompt("Bienvenido!! Ingresa tu nombre para jugar")
+const nombre = prompt("Bienvenido!! Ingresa tu nombre para jugar")
+
+const mensajes = {
+    saludo: function(nombre) {
+        console.log("Hola " + nombre + ", te presento mi juego en contra de la muerte de los gatitos, espero que te guste!")
+    },
+    despedida: function(nombre) {
+        console.log(nombre + ", gracias por jugar!!")
+    },
+
+}
+
+mensajes.saludo(nombre);
 
 for ( round = 1; round < 6; round +=1) {
 
@@ -59,6 +71,8 @@ if (vidaGatito > 0) {
     document.write('<h2 class="h2__cardFinal--negro">Esto no va a quedar así!!<br>Para salvar al gatito haz <a href="index.html">clíck aquí</a></h2>');
     
 }
+
+mensajes.despedida(nombre);
 
 
 
