@@ -2,12 +2,12 @@
 let vidaGatito = 7;
 const salvarGatito = 0;
 const muereGatito = 2;
-const nombre = prompt("Bienvenido!! Ingresa tu nombre para jugar")
+const nombre = prompt("Bienvenido!! Ingresa tu nombre para jugar");
 
 const mensajes = {
-    saludo: (nombre) => console.log("Hola " + nombre + ", te presento mi juego en contra de la muerte de los gatitos, espero que te guste!"),
+    saludo: nombre => console.log("Hola " + nombre + ", te presento mi juego en contra de la muerte de los gatitos, espero que te guste!"),
 
-    despedida: (nombre) => console.log(nombre + ", gracias por jugar!!"),
+    despedida: nombre => console.log(nombre + ", gracias por jugar!!"),
     
 }
 
@@ -70,6 +70,113 @@ if (vidaGatito > 0) {
 }
 
 mensajes.despedida(nombre);
+
+console.log("-----------Bienvenido a la tienda virtual de Salvando al gatito-----------")
+
+const tienda = [
+    {
+        item: 'Cama',
+        precio: 2000
+    },
+    {
+        item: 'Manta de lana',
+        precio: 500
+    },
+    {
+        item: 'Juguete pelota',
+        precio: 150
+    },
+    {
+        item: 'Juguete rascador',
+        precio: 200
+    },
+    {
+        item: 'Juguete cuerda',
+        precio: 80
+    },
+    {
+        item: 'Shampoo',
+        precio: 250
+    },
+    {
+        item: 'Shampoo especial',
+        precio: 500
+    },
+    {
+        item: 'Tratamiento para brillo de pelaje',
+        precio: 400
+    },
+    {
+        item: 'Ropa',
+        precio: 300
+    },
+]
+
+
+// for(const producto of tienda) {
+
+//     console.log("Producto: " + producto.item + " - " + "Precio: $" + producto.precio);
+// }
+
+
+alert("Estamos trabajando en nuestra nueva tienda para ayudar a los gatitos, a continuación nos gustaría que fijes un rango de precio mínimo y máximo en tus expectativas de costo de los productos");
+
+let minimo = Number(prompt('Ingrese un precio mínimo'));
+let maximo = Number(prompt('Ingrese un precio máximo'));
+
+const datosBusqueda = {
+    minimo: "",
+    maximo: ""
+}
+
+function mostrarTienda(tienda){
+    
+    tienda.forEach(producto => {
+        console.log(producto.item + " - $" + producto.precio);
+    });
+}
+
+function noResultado(){
+
+    console.log ('No hay resultados!');
+    alert('No hay resultados!');
+}
+
+function filtrarMinimo(producto){
+    if(datosBusqueda.minimo){
+        return producto.precio >= datosBusqueda.minimo;
+    } 
+    return producto;
+}
+
+function filtrarMaximo(producto){
+    if(datosBusqueda.maximo){
+        return producto.precio <= datosBusqueda.maximo;
+    } 
+    return producto;
+}
+
+function filtrarTienda(){
+
+    let resultado = tienda.filter(filtrarMinimo).filter(filtrarMaximo);
+
+    if (resultado.length) {
+        mostrarTienda(resultado);
+    } else {
+        noResultado();
+    }
+}
+
+filtrarTienda();
+
+
+
+
+
+
+
+
+
 
 
 
