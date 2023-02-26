@@ -79,6 +79,18 @@ const tienda = [
         precio: 2000
     },
     {
+        item: 'Cama de lana',
+        precio: 2500
+    },
+    {
+        item: 'Cama de seda',
+        precio: 3000
+    },
+    {
+        item: 'Manta de seda',
+        precio: 800
+    },
+    {
         item: 'Manta de lana',
         precio: 500
     },
@@ -93,6 +105,10 @@ const tienda = [
     {
         item: 'Juguete cuerda',
         precio: 80
+    },
+    {
+        item: 'Kit de juguetes',
+        precio: 400
     },
     {
         item: 'Shampoo',
@@ -110,13 +126,23 @@ const tienda = [
         item: 'Ropa',
         precio: 300
     },
+    {
+        item: 'Zapatos',
+        precio: 200
+    },
+    {
+        item: 'Casa tamaño pequeño',
+        precio: 6000
+    }, 
+    {
+        item: 'Casa tamaño medio',
+        precio: 9000
+    },
+    {
+        item: 'Casa tamaño grande',
+        precio: 12000
+    }
 ]
-
-
-// for(const producto of tienda) {
-
-//     console.log("Producto: " + producto.item + " - " + "Precio: $" + producto.precio);
-// }
 
 
 alert("Estamos trabajando en nuestra nueva tienda para ayudar a los gatitos, a continuación nos gustaría que fijes un rango de precio mínimo y máximo en tus expectativas de costo de los productos");
@@ -125,8 +151,8 @@ let minimo = Number(prompt('Ingrese un precio mínimo'));
 let maximo = Number(prompt('Ingrese un precio máximo'));
 
 const datosBusqueda = {
-    minimo: "",
-    maximo: ""
+    minimo: minimo,
+    maximo: maximo
 }
 
 function mostrarTienda(tienda){
@@ -169,7 +195,12 @@ function filtrarTienda(){
 
 filtrarTienda();
 
+console.log("-----------Nuestro catálogo actualmente-----------")
 
+for(const producto of tienda) {
+
+    console.log("Producto: " + producto.item + " - " + "Precio: $" + producto.precio);
+}
 
 
 
