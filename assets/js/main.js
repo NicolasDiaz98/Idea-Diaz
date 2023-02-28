@@ -71,7 +71,7 @@ if (vidaGatito > 0) {
 
 mensajes.despedida(nombre);
 
-console.log("-----------Bienvenido a la tienda virtual de Salvando al gatito-----------")
+console.log("-----------Estos son los productos que están disponibles según tu rango de precios-----------")
 
 const tienda = [
     {
@@ -195,7 +195,7 @@ function filtrarTienda(){
 
 filtrarTienda();
 
-console.log("-----------Nuestro catálogo actualmente-----------")
+console.log("-----------Bienvenido a la tienda virtual de Salvando al gatito, te dejamos nuestro catálogo con todos nuestros productos-----------")
 
 for(const producto of tienda) {
 
