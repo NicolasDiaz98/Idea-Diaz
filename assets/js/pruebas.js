@@ -1,3 +1,5 @@
+//LOGIN
+
 const formulario = document.querySelector('#formulario')
 
 let usuarios = [];
@@ -28,11 +30,23 @@ const agregarUsuario = (evt) => {
     formulario.reset();
 
     setTimeout(()=> {
+        sessionStorage.setItem('nombreDeUsuario', nombre);
         location.href = "/juego.html"
     },2000)
-
+}
+ 
+if (formulario) {
+  formulario.addEventListener('submit', agregarUsuario);
 }
 
-formulario.addEventListener('submit', agregarUsuario);
+//JUEGO
+
+const nombreUsuario = sessionStorage.getItem('nombreDeUsuario');
 
 
+let vidaGatito = 7;
+const salvarGatito = 0;
+const muereGatito = 2;
+
+
+//TIENDA
