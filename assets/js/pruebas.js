@@ -46,6 +46,9 @@ const nombreUsuario = sessionStorage.getItem('nombreDeUsuario');
 
 if(location.pathname.includes('juego.html')) {
 
+
+//VARIABLES DE DOM
+
     let bienvenida = document.querySelector('#bienvenida');
     let despedida = document.querySelector('#despedida');
 
@@ -53,9 +56,8 @@ if(location.pathname.includes('juego.html')) {
     let contenedorDelJuego = document.querySelector('#contenedorTarjetas');
     let contenedorCardFinal = document.querySelector('#contenedorTarjetaFinal');
     let reiniciarJuego = document.querySelector('#volverAJugar');
-    let roundCard = document.querySelector('#round1');
+    
 
-    let card = document.createElement("div");
     let p = document.createElement("p");
     let p2 = document.createElement("p");
 
@@ -66,86 +68,114 @@ if(location.pathname.includes('juego.html')) {
     const salvarGatito = 0;
     const muereGatito = 2;
 
+    const boton = document.querySelector('#boton')
+//FINAL VARIABLES
 
-for ( round = 1; round < 6; round +=1) {
+boton.addEventListener('click', function() {
 
-    let giro = Math.round(Math.random());
+    for ( round = 1; round < 6; round +=1) {
 
-    card.innerHTML = `
-                            <p class="round">----------- ${round} giro -----------</p>
-                        `
-
-    roundCard.appendChild(card);
-
-    if (giro===1) {
-
-        vidaGatito -= salvarGatito;
-
+        let card = document.createElement("div");
+        card.className = "card__Gatito"
+        let p = document.createElement("p");
+    
+        p.innerHTML = `
+                                <p class="round">----------- ${round} giro -----------</p>
+                            `
+    
+        contenedorDelJuego.appendChild(p);
+    
+        let giro = Math.round(Math.random());
+    
+        if (giro===1) {
+    
+            vidaGatito -= salvarGatito;
+    
+            card.innerHTML = `
+                                <h2 class="h2__card">Muy bien ${nombreUsuario}!! Sigue cuidando al gatito!!</h2>
+                                <img src="./assets/img/gato-choque5.jpg"/>
+                                <p class="detalleVidaGatos">Por ahora su vida es de ${vidaGatito}</p>
+                            `
+    
+            contenedorDelJuego.appendChild(card);              
+        } else {
+            
+            let card = document.createElement("div");
+            card.className = "card__Gatito"
+    
+            vidaGatito -= muereGatito;
+    
+            if (vidaGatito < 0) {
+    
+                vidaGatito = 0
+            }
+            
+            card.innerHTML = `
+                                <h2 class="h2__card">Noooo!! ${nombreUsuario}!! Cuidado con el gatito!!</h2>
+                                <img src="./assets/img/gato-Gritando.jpg"/>
+                                <p class="detalleVidaGatos">Por ahora su vida es de ${vidaGatito}</p>
+                            `
+    
+            contenedorDelJuego.appendChild(card); 
+        }
+    
+        if (vidaGatito > 0) {
+    
+            continue;
+        } else {
+    
+            break;
+        }
+    }
+    
+    if (vidaGatito > 0) {
+    
+        let card = document.createElement("div");
+        let card2 = document.createElement("div");
+        card.className = "card__Final"
+        card2.className = "card__Final2"
+    
         card.innerHTML = `
-                            <h2 class="h2__card">Muy bien ${nombreUsuario}!! Sigue cuidando al gatito!!</h2>
-                            <img src="./assets/img/gato-choque5.jpg"/>
-                            <p>Por ahora su vida es de ${vidaGatito}</p>
-                        `
-
-        contenedorDelJuego.appendChild(card);              
+                            <h2 class="h2__cardFinal">Felicitaciones ${nombreUsuario} salvaste al gatito!!<br>Seran amigos por siempre!!</h2>
+                            <img src="./assets/img/gato-feliz.jpg"/><br>
+                            `
+    
+        contenedorCardFinal.appendChild(card);
+    
+        card2.innerHTML = `
+                            <h2 class="h2__cardFinal--negro my-5">Muchas gracias por jugar!!</h2>
+                            <h2 class="h2__cardFinal--negro my-5">Para salvar otra vez al gatito haz <span><a href="/juego.html">clíck aquí</a></span></h2
+                            `
+    
+        reiniciarJuego.appendChild(card2);
     } else {
     
-        vidaGatito -= muereGatito;
-
-        if (vidaGatito < 0) {
-
-            vidaGatito = 0
-        }
-        
+        let card = document.createElement("div");
+        let card2 = document.createElement("div");
+        card.className = "card__Final"
+        card2.className = "card__Final2"
+    
         card.innerHTML = `
-                            <h2 class="h2__card">Noooo!! ${nombreUsuario}!! Cuidado con el gatito!!</h2>
-                            <img src="./assets/img/gato-Gritando.jpg"/>
-                            <p>Por ahora su vida es de ${vidaGatito}</p>
-                        `
+                            <h2 class="h2__cardFinal my-5">Asesino mataste al gatito!!<br>Fuera de aquí!!</h2>
+                            <img src="./assets/img/matandoGatito.jpg"/>
+                            `
+        contenedorCardFinal.appendChild(card);  
 
-        contenedorDelJuego.appendChild(card); 
+        card2.innerHTML =   `<h2 class="h2__cardFinal--negro my-5" >Esto no va a quedar así!!<br>
+                            Para salvar al gatito haz <span><a href="/juego.html">clíck aquí</a></span></h2>
+                            `
+
+        reiniciarJuego.appendChild(card2);
     }
 
-    if (vidaGatito > 0) {
-
-        continue;
-    } else {
-
-        break;
+    
+    p2.textContent = `${nombreUsuario}, gracias por jugar!!`;
+    despedida.appendChild(p2);
     }
-}
 
-if (vidaGatito > 0) {
-
-    card.innerHTML = `
-                        <h2 class="h2__cardFinal">Felicitaciones ${nombreUsuario} salvaste al gatito!!<br>Seran amigos por siempre!!</h2>
-                        <img src="./assets/img/gato-feliz.jpg"/>
-                        `
-
-    contenedorCardFinal.appendChild(card);
-
-    card.innerHTML = `
-                        <h2 class="h2__cardFinal--negro">Muchas gracias por jugar!!<br>
-                        Para salvar otra vez al gatito haz <span><a href=/juego.html">clíck aquí</a></span></h2>
-                        `
-
-    reiniciarJuego.appendChild(card);
-} else {
-
-    card.innerHTML = `
-                        <h2 class="h2__cardFinal">Asesino mataste al gatito!!<br>Fuera de aquí!!</h2>
-                        <img src="./assets/img/matandoGatito.jpg"/>
-
-                        <h2 class="h2__cardFinal--negro">Esto no va a quedar así!!<br>Para salvar al gatito haz <span><a href="/juego.html">clíck aquí</a></span></h2>
-                        `
-
-    reiniciarJuego.appendChild(card);  
-}
+)}
 
 
-p2.textContent = `${nombreUsuario}, gracias por jugar!!`;
-despedida.appendChild(p2);
-}
 
 
 //TIENDA

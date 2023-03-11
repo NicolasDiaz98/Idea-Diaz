@@ -109,10 +109,57 @@ span {
 
 /*JUEGO*/
 
+.css-button-3d--black {
+    min-width: 230px;
+    height: 80px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: rgb(144, 53, 230);
+    box-shadow: 0 5px #212529;
+    font-family: 'Secular One', sans-serif;
+    font-size: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 80px;
+  }
+
+  .css-button-3d--black:hover {
+    box-shadow: 0 3px #000000;
+    top: 1px;
+  }
+  .css-button-3d--black:active {
+    box-shadow: 0 0 #000000;
+    top: 5px;
+  }
+
+.round {
+    font-size: 40px;
+    color: rgb(144, 53, 230);
+    font-family: 'Secular One', sans-serif;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.detalleVidaGatos{
+    font-size: 20px;
+    font-family: 'Secular One', sans-serif;
+    text-align: center;
+}
+
 .card__Gatito {
     width: 650px;
     height: 650px;
-    background-color: rgb(144, 53, 230);
+    background-color: rgb(132, 13, 243);
     margin: 0 auto;
     margin-bottom: 50px;
     border-radius: 5px;
@@ -127,9 +174,17 @@ span {
     border-radius: 5px;
 }
 
+.contenedorCardFinal {
+    width: 850px;
+    height: 850px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 .card__Final {
     width: 1000px;
-    height: 1000px;
+    height: 1200px;
     background-color: rgb(144, 53, 230);
     margin: 0 auto;
     margin-bottom: 50px;
@@ -162,12 +217,21 @@ span {
     line-height: 70px;
 }
 
+.card__Final2{
+    height: 200px;
+    width: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 10px;
+}
+
 .h2__cardFinal--negro {
     color: black;
     font-size: 40px;
     text-align: center;
     font-family: 'Secular One', sans-serif;
     line-height: 70px;
+    margin-top: 50px;
     margin-bottom: 50px;
 }
 
