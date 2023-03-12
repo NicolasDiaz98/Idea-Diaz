@@ -12,7 +12,8 @@
 /*LOGIN*/
 
 .bodyLogin {
-    background-image: url("../img/gatoFondo.jpg");
+    background-color: #000000;
+    /* background-image: url("../img/gatoFondo.jpg"); */
     object-fit: cover;
 }
 
