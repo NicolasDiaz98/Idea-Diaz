@@ -22,7 +22,7 @@
 }
   
 .contacto__input {
-    border: none;
+    border: black;
     outline: none;
     border-bottom: 1px solid black
 }
