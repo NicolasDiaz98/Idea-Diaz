@@ -31,7 +31,7 @@ const agregarUsuario = (evt) => {
 
     setTimeout(()=> {
         sessionStorage.setItem('nombreDeUsuario', nombre);
-        location.href = "/juego.html"
+        location.href = "juego.html"
     },2000)
 }
  
@@ -144,7 +144,7 @@ boton.addEventListener('click', function() {
     
         card2.innerHTML = `
                             <h2 class="h2__cardFinal--negro my-5">Muchas gracias por jugar!!</h2>
-                            <h2 class="h2__cardFinal--negro my-5">Para salvar otra vez al gatito haz <span><a href="/juego.html">clíck aquí</a></span></h2
+                            <h2 class="h2__cardFinal--negro my-5">Para salvar otra vez al gatito haz <span><a href="juego.html">clíck aquí</a></span></h2
                             `
     
         reiniciarJuego.appendChild(card2);
@@ -162,7 +162,7 @@ boton.addEventListener('click', function() {
         contenedorCardFinal.appendChild(card);  
 
         card2.innerHTML =   `<h2 class="h2__cardFinal--negro my-5" >Esto no va a quedar así!!<br>
-                            Para salvar al gatito haz <span><a href="/juego.html">clíck aquí</a></span></h2>
+                            Para salvar al gatito haz <span><a href="juego.html">clíck aquí</a></span></h2>
                             `
 
         reiniciarJuego.appendChild(card2);

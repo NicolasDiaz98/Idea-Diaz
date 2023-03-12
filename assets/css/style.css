@@ -24,7 +24,7 @@
 .contacto__input {
     border: none;
     outline: none;
-    border-bottom: 1px solid var(--negro);
+    border-bottom: 1px solid black
 }
   
 .boton {
