@@ -176,6 +176,21 @@ boton.addEventListener('click', function() {
 )}
 
 
-
-
 //TIENDA
+
+if(location.pathname.includes('tienda.html')) {
+
+    function toggleDarkMode() {
+        const body = document.querySelector('body');
+        body.classList.toggle('dark-mode');
+        const isDarkMode = body.classList.contains('dark-mode');
+        localStorage.setItem('isDarkMode', isDarkMode);
+    }
+      
+      
+    const isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
+      if (isDarkMode) {
+        document.querySelector('body').classList.add('dark-mode');
+        }
+}
+

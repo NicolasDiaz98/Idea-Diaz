@@ -135,7 +135,7 @@ const tienda = [
         precio: 6000
     }, 
     {
-        item: 'Casa tamaño medio',
+        item: 'Casa tamaño mediano',
         precio: 9000
     },
     {

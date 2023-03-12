@@ -12,7 +12,7 @@
 /*LOGIN*/
 
 .bodyLogin {
-    
+
     background-image: url(../img/gatoFondo.jpg);
     object-fit: cover;
 }
@@ -160,7 +160,7 @@ span {
 .card__Gatito {
     width: 650px;
     height: 650px;
-    background-color: rgb(132, 13, 243);
+    background-color: rgb(144, 53, 230);
     margin: 0 auto;
     margin-bottom: 50px;
     border-radius: 5px;
@@ -241,3 +241,26 @@ span {
     text-decoration: none;
 }
 
+/*TIENDA*/
+
+body.dark-mode {
+    background-color: #000000;
+    color: #000000;
+  }
+  body.dark-mode a {
+    color: #000000;
+  }
+  body.dark-mode button {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+.btnDark {
+    background-image: url(../img/drkmode.png);
+    height: 64px;
+    width: 64px;
+    border: none;
+    background-color: transparent;
+    margin-top: 20px;
+    margin-left: 90%;
+}   
