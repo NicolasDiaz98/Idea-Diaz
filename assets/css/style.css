@@ -263,4 +263,24 @@ body.dark-mode {
     background-color: transparent;
     margin-top: 20px;
     margin-left: 90%;
-}   
+} 
+
+.card-img-top {
+    width: 450px;
+    height: 400px;
+}
+
+.card-text {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.carrito {
+    background-image: url(../img/anadir-al-carrito.png);
+    height: 64px;
+    width: 64px;
+    border: none;
+    background-color: transparent;
+    margin: 0 auto;
+}
