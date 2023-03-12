@@ -71,136 +71,136 @@
 
 // mensajes.despedida(nombre);
 
-// console.log("-----------Estos son los productos que están disponibles según tu rango de precios-----------")
+console.log("-----------Estos son los productos que están disponibles según tu rango de precios-----------")
 
-// const tienda = [
-//     {
-//         item: 'Cama',
-//         precio: 2000
-//     },
-//     {
-//         item: 'Cama de lana',
-//         precio: 2500
-//     },
-//     {
-//         item: 'Cama de seda',
-//         precio: 3000
-//     },
-//     {
-//         item: 'Manta de seda',
-//         precio: 800
-//     },
-//     {
-//         item: 'Manta de lana',
-//         precio: 500
-//     },
-//     {
-//         item: 'Juguete pelota',
-//         precio: 150
-//     },
-//     {
-//         item: 'Juguete rascador',
-//         precio: 200
-//     },
-//     {
-//         item: 'Juguete cuerda',
-//         precio: 80
-//     },
-//     {
-//         item: 'Kit de juguetes',
-//         precio: 400
-//     },
-//     {
-//         item: 'Shampoo',
-//         precio: 250
-//     },
-//     {
-//         item: 'Shampoo especial',
-//         precio: 500
-//     },
-//     {
-//         item: 'Tratamiento para brillo de pelaje',
-//         precio: 400
-//     },
-//     {
-//         item: 'Ropa',
-//         precio: 300
-//     },
-//     {
-//         item: 'Zapatos',
-//         precio: 200
-//     },
-//     {
-//         item: 'Casa tamaño pequeño',
-//         precio: 6000
-//     }, 
-//     {
-//         item: 'Casa tamaño medio',
-//         precio: 9000
-//     },
-//     {
-//         item: 'Casa tamaño grande',
-//         precio: 12000
-//     }
-// ]
+const tienda = [
+    {
+        item: 'Cama',
+        precio: 2000
+    },
+    {
+        item: 'Cama de lana',
+        precio: 2500
+    },
+    {
+        item: 'Cama de seda',
+        precio: 3000
+    },
+    {
+        item: 'Manta de seda',
+        precio: 800
+    },
+    {
+        item: 'Manta de lana',
+        precio: 500
+    },
+    {
+        item: 'Juguete pelota',
+        precio: 150
+    },
+    {
+        item: 'Juguete rascador',
+        precio: 200
+    },
+    {
+        item: 'Juguete cuerda',
+        precio: 80
+    },
+    {
+        item: 'Kit de juguetes',
+        precio: 400
+    },
+    {
+        item: 'Shampoo',
+        precio: 250
+    },
+    {
+        item: 'Shampoo especial',
+        precio: 500
+    },
+    {
+        item: 'Tratamiento para brillo de pelaje',
+        precio: 400
+    },
+    {
+        item: 'Ropa',
+        precio: 300
+    },
+    {
+        item: 'Zapatos',
+        precio: 200
+    },
+    {
+        item: 'Casa tamaño pequeño',
+        precio: 6000
+    }, 
+    {
+        item: 'Casa tamaño medio',
+        precio: 9000
+    },
+    {
+        item: 'Casa tamaño grande',
+        precio: 12000
+    }
+]
 
 
-// alert("Estamos trabajando en nuestra nueva tienda para ayudar a los gatitos, a continuación nos gustaría que fijes un rango de precio mínimo y máximo en tus expectativas de costo de los productos");
+alert("Estamos trabajando en nuestra nueva tienda para ayudar a los gatitos, a continuación nos gustaría que fijes un rango de precio mínimo y máximo en tus expectativas de costo de los productos");
 
-// let minimo = Number(prompt('Ingrese un precio mínimo'));
-// let maximo = Number(prompt('Ingrese un precio máximo'));
+let minimo = Number(prompt('Ingrese un precio mínimo'));
+let maximo = Number(prompt('Ingrese un precio máximo'));
 
-// const datosBusqueda = {
-//     minimo: minimo,
-//     maximo: maximo
-// }
+const datosBusqueda = {
+    minimo: minimo,
+    maximo: maximo
+}
 
-// function mostrarTienda(tienda){
+function mostrarTienda(tienda){
     
-//     tienda.forEach(producto => {
-//         console.log(producto.item + " - $" + producto.precio);
-//     });
-// }
+    tienda.forEach(producto => {
+        console.log(producto.item + " - $" + producto.precio);
+    });
+}
 
-// function noResultado(){
+function noResultado(){
 
-//     console.log ('No hay resultados!');
-//     alert('No hay resultados!');
-// }
+    console.log ('No hay resultados!');
+    alert('No hay resultados!');
+}
 
-// function filtrarMinimo(producto){
-//     if(datosBusqueda.minimo){
-//         return producto.precio >= datosBusqueda.minimo;
-//     } 
-//     return producto;
-// }
+function filtrarMinimo(producto){
+    if(datosBusqueda.minimo){
+        return producto.precio >= datosBusqueda.minimo;
+    } 
+    return producto;
+}
 
-// function filtrarMaximo(producto){
-//     if(datosBusqueda.maximo){
-//         return producto.precio <= datosBusqueda.maximo;
-//     } 
-//     return producto;
-// }
+function filtrarMaximo(producto){
+    if(datosBusqueda.maximo){
+        return producto.precio <= datosBusqueda.maximo;
+    } 
+    return producto;
+}
 
-// function filtrarTienda(){
+function filtrarTienda(){
 
-//     let resultado = tienda.filter(filtrarMinimo).filter(filtrarMaximo);
+    let resultado = tienda.filter(filtrarMinimo).filter(filtrarMaximo);
 
-//     if (resultado.length) {
-//         mostrarTienda(resultado);
-//     } else {
-//         noResultado();
-//     }
-// }
+    if (resultado.length) {
+        mostrarTienda(resultado);
+    } else {
+        noResultado();
+    }
+}
 
-// filtrarTienda();
+filtrarTienda();
 
-// console.log("-----------Bienvenido a la tienda virtual de Salvando al gatito, te dejamos nuestro catálogo con todos nuestros productos-----------")
+console.log("-----------Bienvenido a la tienda virtual de Salvando al gatito, te dejamos nuestro catálogo con todos nuestros productos-----------")
 
-// for(const producto of tienda) {
+for(const producto of tienda) {
 
-//     console.log("Producto: " + producto.item + " - " + "Precio: $" + producto.precio);
-// }
+    console.log("Producto: " + producto.item + " - " + "Precio: $" + producto.precio);
+}
 
 
 

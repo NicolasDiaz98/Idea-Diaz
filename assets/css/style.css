@@ -12,7 +12,7 @@
 /*LOGIN*/
 
 .bodyLogin {
-    background-image: url("/assets/img/gatoFondo.jpg");
+    background-image: url("../img/gatoFondo.jpg");
     object-fit: cover;
 }
 
@@ -23,7 +23,7 @@
   
 .contacto__input {
     border: black;
-    outline: none;
+    outline: black;
     border-bottom: 1px solid black
 }
   
