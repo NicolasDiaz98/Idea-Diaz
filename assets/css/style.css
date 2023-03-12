@@ -243,6 +243,27 @@ span {
 
 /*TIENDA*/
 
+.btn {
+    background-image: url(../img/carrito-de-compras.png);
+    height: 64px;
+    width: 64px;
+    border: none;
+    background-color: transparent;   
+}
+
+.btn:hover {
+    background-color: white;
+}
+
+.headerTienda {
+    justify-content: space-around;
+}
+
+.offcanvas-titleTienda {
+    font-size: 30px;
+    font-weight: bold;
+}
+
 body.dark-mode {
     background-color: #000000;
     color: #000000;
