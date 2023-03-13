@@ -192,5 +192,95 @@ if(location.pathname.includes('tienda.html')) {
       if (isDarkMode) {
         document.querySelector('body').classList.add('dark-mode');
         }
+
+
+        const tienda = [
+            {
+                item: 'Cama',
+                precio: 2000
+            },
+            {
+                item: 'Cama de lana',
+                precio: 2500
+            },
+            {
+                item: 'Cama de seda',
+                precio: 3000
+            },
+            {
+                item: 'Manta de seda',
+                precio: 800
+            },
+            {
+                item: 'Manta de lana',
+                precio: 500
+            },
+            {
+                item: 'Juguete pelota',
+                precio: 150
+            },
+            {
+                item: 'Juguete rascador',
+                precio: 200
+            },
+            {
+                item: 'Juguete cuerda',
+                precio: 80
+            },
+            {
+                item: 'Kit de juguetes',
+                precio: 400
+            },
+            {
+                item: 'Shampoo',
+                precio: 250
+            },
+            {
+                item: 'Shampoo especial',
+                precio: 500
+            },
+            {
+                item: 'Tratamiento para brillo de pelaje',
+                precio: 400
+            },
+            {
+                item: 'Ropa',
+                precio: 300
+            },
+            {
+                item: 'Zapatos',
+                precio: 200
+            },
+            {
+                item: 'Casa tamaño pequeño',
+                precio: 6000
+            }, 
+            {
+                item: 'Casa tamaño mediano',
+                precio: 9000
+            },
+            {
+                item: 'Casa tamaño grande',
+                precio: 12000
+            }
+        ]
+
+        
+
+        function generarCarrito() {
+
+            for(let i = 0; i < tienda.length; i+=1) {
+
+                const id = "carrito" + (i + 1);
+
+                tienda[i].id = id;
+
+                localStorage.setItem(id, JSON.stringify(tienda[i]));
+            }
+
+        }
+        
+        generarCarrito();
+
 }
 
