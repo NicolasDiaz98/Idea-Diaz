@@ -252,7 +252,7 @@ span {
 }
 
 .btn:hover {
-    background-color: white;
+    background-color: rgb(126, 39, 207);
 }
 
 .headerTienda {
@@ -262,18 +262,29 @@ span {
 .offcanvas-titleTienda {
     font-size: 30px;
     font-weight: bold;
+    color: white;
+}
+
+.offcanvas{
+    background-color: rgb(144, 53, 230);
+}
+
+.pCarrito {
+    font-size: 20px;
+    font-family: 'Secular One', sans-serif;
+    color: white;
 }
 
 body.dark-mode {
-    background-color: #000000;
-    color: #000000;
+    background-color: black;
+    color: black;
   }
   body.dark-mode a {
-    color: #000000;
+    color: black;
   }
   body.dark-mode button {
     background-color: #ffffff;
-    color: #000000;
+    color: black;
   }
 
 .btnDark {
@@ -289,11 +300,12 @@ body.dark-mode {
 .card-img-top {
     width: 450px;
     height: 400px;
+    border-bottom: 1px solid black;
 }
 
 .card-text {
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
 }
 
@@ -305,3 +317,6 @@ body.dark-mode {
     background-color: transparent;
     margin: 0 auto;
 }
+ .card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
