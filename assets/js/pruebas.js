@@ -280,9 +280,8 @@ if(location.pathname.includes('tienda.html')) {
 
         }
         
-        generarIdCarrito();
-
         
+        function agregarCarrito () {
         
         for (i = 1; i <= tienda.length; i += 1) {
 
@@ -292,15 +291,22 @@ if(location.pathname.includes('tienda.html')) {
             btnCarrito.addEventListener('click', function() {
 
             let card = document.createElement("div");
+            card.classList.add("contenedorP");
             const bodyCarrito = document.querySelector('#bodyCarrito');
 
-            card.innerHTML = `<p class="pCarrito">${producto.item} - $${producto.precio}</p>
+            card.innerHTML = `<p class="pCarrito">${producto.item} - $${producto.precio}</p><button class="btnRemoveCarrito"></button>
                             `
 
             bodyCarrito.appendChild(card);
-        })   
+        })}
+        }   
+
+        function eliminarCarrito() {
+            
         }
 
-
+        generarIdCarrito();
+        agregarCarrito();
+        eliminarCarrito();
 }
 

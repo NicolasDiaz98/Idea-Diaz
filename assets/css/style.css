@@ -269,10 +269,26 @@ span {
     background-color: rgb(144, 53, 230);
 }
 
+.contenedorP {
+    display: flex;
+    align-items:flex-start;
+    gap: 20px;
+}
+
 .pCarrito {
     font-size: 20px;
     font-family: 'Secular One', sans-serif;
     color: white;
+    display: inline-block;
+}
+
+.btnRemoveCarrito {
+    background-image: url(../img/delete.png);
+    height: 32px;
+    width: 32px;
+    background-color: transparent;
+    border: none;
+    
 }
 
 body.dark-mode {
