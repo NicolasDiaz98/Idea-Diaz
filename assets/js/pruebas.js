@@ -171,7 +171,30 @@ boton.addEventListener('click', function() {
     
     p2.textContent = `${nombreUsuario}, gracias por jugar!!`;
     despedida.appendChild(p2);
+
+
+    let btn = document.createElement('button');
+    let btnIrATienda = document.querySelector('#btnIrTienda');
+    btn.className = "btnATienda";
+
+    btn.innerHTML = `
+                        <span class="animacionBtn"> Ir a la Tienda </span>
+                        <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+                            <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+                        </svg>
+                    
+                    `
+
+    btnIrATienda.appendChild(btn);
+
+    btnIrTienda.addEventListener('click', function(){
+        location.href ='tienda.html';
+    })
     }
+
+
+
+    
 
 )}
 
@@ -289,24 +312,27 @@ if(location.pathname.includes('tienda.html')) {
             const producto = JSON.parse(localStorage.getItem(`carrito${i}`));
 
             btnCarrito.addEventListener('click', function() {
+                
+                let card = document.createElement("div");
+                card.classList.add("contenedorP");
+                const bodyCarrito = document.querySelector('#bodyCarrito');
 
-            let card = document.createElement("div");
-            card.classList.add("contenedorP");
-            const bodyCarrito = document.querySelector('#bodyCarrito');
-
-            card.innerHTML = `<p class="pCarrito">${producto.item} - $${producto.precio}</p><button class="btnRemoveCarrito"></button>
+                card.innerHTML = `<p class="pCarrito">${producto.item} - $${producto.precio}</p><button class="btnRemoveCarrito"></button>
                             `
+                bodyCarrito.appendChild(card);
+            
+                const btnRemoveCarrito = card.querySelector('.btnRemoveCarrito');
 
-            bodyCarrito.appendChild(card);
-        })}
+                btnRemoveCarrito.addEventListener('click', function(){
+                bodyCarrito.removeChild(card);
+            });
+            });
+            } 
         }   
 
-        function eliminarCarrito() {
             
-        }
-
         generarIdCarrito();
         agregarCarrito();
-        eliminarCarrito();
+     
 }
 

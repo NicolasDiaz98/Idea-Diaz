@@ -124,7 +124,7 @@ span {
     border-radius: 5px;
     border: none;
     background: rgb(144, 53, 230);
-    box-shadow: 0 5px #212529;
+    box-shadow: 1.5px 5px #212529;
     font-family: 'Secular One', sans-serif;
     font-size: 25px;
     top: 50%;
@@ -241,6 +241,64 @@ span {
     text-decoration: none;
 }
 
+.contenedorBtnTienda {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btnATienda {
+    border: none;
+    background: none;
+    margin-left: 50%;
+    margin: 80px;
+    cursor: pointer;
+  }
+  
+  .btnATienda span {
+    padding-bottom: 24px;
+    letter-spacing: 16px;
+    font-size: 34px;
+    padding-right: 25px;
+    text-transform: uppercase;
+  }
+  
+  .btnATienda svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+  }
+  
+  .btnATienda:hover svg {
+    transform: translateX(0);
+  }
+  
+  .btnATienda:active svg {
+    transform: scale(0.9);
+  }
+  
+  .animacionBtn {
+    position: relative;
+    color: rgb(144, 53, 230);
+    padding-bottom: 20px;
+  }
+  
+  .animacionBtn:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .btnATienda:hover .animacionBtn:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
 /*TIENDA*/
 
 .btn {
@@ -252,7 +310,8 @@ span {
 }
 
 .btn:hover {
-    background-color: rgb(126, 39, 207);
+    transform: scale(1.1);
+    background-color: transparent;
 }
 
 .headerTienda {
@@ -313,6 +372,10 @@ body.dark-mode {
     margin-left: 90%;
 } 
 
+.btnDark:hover {
+    transform: scale(1.01);
+} 
+
 .card-img-top {
     width: 450px;
     height: 400px;
@@ -333,6 +396,16 @@ body.dark-mode {
     background-color: transparent;
     margin: 0 auto;
 }
+
+.carrito:hover {
+    transform: scale(1.01);
+}
  .card {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
- }
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+
