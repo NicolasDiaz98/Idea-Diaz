@@ -10,36 +10,41 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <header class="headerTienda">
+  <header>
 
-        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></button>
+    <div class="contenedorImgGatito">
 
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"        aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-titleTienda" id="offcanvasWithBothOptionsLabel">CARRITO</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body" id="bodyCarrito">
-            
-        </div>
-        <div class="offcanvas-body totalCarritoP" id="totalCarrito">
+      <button class="btnDark" onclick="toggleDarkMode()"></button>
+      <img class="img__gatito" src="./assets/img/Gatito.png" alt="Gatito">
 
-        </div>
     </div>
-    
 
     <div class="contenedor__titulo">
-        <h1 class="h1__titulo">Bienvenido a la tienda</h1>
+      <h1 class="h1__titulo">Bienvenido a la tienda</h1>
     </div>
+    <div class="contenedorBtnTienda my-3">
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></button>
+    </div>
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"  aria-labelledby="offcanvasWithBothOptionsLabel">
+      <div class="offcanvas-header">
+          <h5 class="offcanvas-titleTienda" id="offcanvasWithBothOptionsLabel">CARRITO</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body" id="bodyCarrito">
+            
+      </div>
+      <div class="offcanvas-body totalCarritoP" id="totalCarrito">
 
-        <img class="img__gatito" src="./assets/img/Gatito.png" alt="Gatito">
-
-    </header>
+      </div>
+    </div>    
+  </header>
 
     <main class="container">
 
-        <button class="btnDark" onclick="toggleDarkMode()"></button>
-
+      <div class="contenedorBtn--1200">
+        <button class="btn--1200 btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></button>
+        <button class="btnDark--1200" onclick="toggleDarkMode()"></button>
+      </div>
         <div class="row row-cols-1 row-cols-md-3 g-4 my-5">
             <div class="col">
               <div class="card">
@@ -155,7 +160,7 @@
                 <div class="card">
                   <img src="./assets/img/tienda/tienda12.jpg" class="card-img-top img-fluid" alt="Producto de gato">
                   <div class="card-body">
-                    <h3 class="card-title text-center">Tratamiento para brillo de pelaje</h3>
+                    <h3 class="card-title text-center">Tratamiento de pelaje</h3>
                     <p class="card-text">$400</p>
                     <button class="carrito" id="carrito12"></button>
                   </div>

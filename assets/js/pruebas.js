@@ -78,7 +78,7 @@ boton.addEventListener('click', function() {
         let card = document.createElement("div");
         card.className = "card__Gatito"
         let p = document.createElement("p");
-    
+        
         p.innerHTML = `
                                 <p class="round">----------- ${round} giro -----------</p>
                             `
@@ -92,7 +92,7 @@ boton.addEventListener('click', function() {
             vidaGatito -= salvarGatito;
     
             card.innerHTML = `
-                                <h2 class="h2__card">Muy bien ${nombreUsuario}!! Sigue cuidando al gatito!!</h2>
+                                <h2 class="h2__card">Muy bien ${nombreUsuario} !!! Sigue cuidando al gatito !!!!</h2>
                                 <img src="./assets/img/gato-choque5.jpg"/>
                                 <p class="detalleVidaGatos">Por ahora su vida es de ${vidaGatito}</p>
                             `
@@ -100,18 +100,17 @@ boton.addEventListener('click', function() {
             contenedorDelJuego.appendChild(card);              
         } else {
             
-            let card = document.createElement("div");
-            card.className = "card__Gatito"
     
             vidaGatito -= muereGatito;
     
             if (vidaGatito < 0) {
     
                 vidaGatito = 0
+                break;
             }
             
             card.innerHTML = `
-                                <h2 class="h2__card">Noooo!! ${nombreUsuario}!! Cuidado con el gatito!!</h2>
+                                <h2 class="h2__card">Noooo!! ${nombreUsuario}!! Cuidado con el gatito la próxima!!</h2>
                                 <img src="./assets/img/gato-Gritando.jpg"/>
                                 <p class="detalleVidaGatos">Por ahora su vida es de ${vidaGatito}</p>
                             `
@@ -119,12 +118,12 @@ boton.addEventListener('click', function() {
             contenedorDelJuego.appendChild(card); 
         }
     
-        if (vidaGatito > 0) {
-    
-            continue;
-        } else {
+        if (vidaGatito <= 0) {
     
             break;
+        } else {
+            
+            continue;
         }
     }
     
@@ -156,7 +155,7 @@ boton.addEventListener('click', function() {
         card2.className = "card__Final2"
     
         card.innerHTML = `
-                            <h2 class="h2__cardFinal my-5">Asesino mataste al gatito!!<br>Fuera de aquí!!</h2>
+                            <h2 class="h2__cardFinal my-2">Asesino mataste al gatito!!<br>Fuera de aquí!!</h2>
                             <img src="./assets/img/matandoGatito.jpg"/>
                             `
         contenedorCardFinal.appendChild(card);  
@@ -263,7 +262,7 @@ if(location.pathname.includes('tienda.html')) {
                 precio: 500
             },
             {
-                item: 'Tratamiento para brillo de pelaje',
+                item: 'Tratamiento de pelaje',
                 precio: 400
             },
             {

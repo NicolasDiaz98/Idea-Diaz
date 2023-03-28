@@ -6,6 +6,107 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    font-family: 'Secular One', sans-serif;
+}
+
+/*ENCABEZADO*/
+
+header {
+    background-color: rgb(144, 53, 230);
+    border-bottom: 2px solid black;
+}
+
+.h1__titulo {
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.53);
+    text-align: center;
+}
+
+.h2__titulo {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+}
+
+.contenedorImgGatito {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img__gatito {
+    height: 200px;
+    width: 200px;
+
+}
+
+.h2__main {
+    text-align: center;
+    margin: 50px;
+    font-size: 60px;
+    font-family: 'Indie Flower', cursive;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.53);
+}
+
+span {
+    color: blueviolet;
+}
+
+.h2__gatito {
+    color: black;
+    font-size: 35px;
+    font-family: 'Secular One', sans-serif;
+    text-align: center;
+}
+
+.saludos {
+    font-size: 30px;
+    font-family: 'Secular One', sans-serif;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+    header {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .h1__titulo {
+        font-size: 60px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    
+    .h2__titulo {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    
+    .h2__main {
+        text-align: center;
+        margin: 50px;
+        font-size: 60px;
+    }
+  
+    .h2__gatito {
+        font-size: 35px;
+        margin-bottom: 60px;
+        text-align: center;
+    }
+    
+    .saludos {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
 }
 
 
@@ -49,66 +150,19 @@ background: #fff;
 color: #212529;
 }
 
-/*ENCABEZADO*/
-
-header {
-    background-color: rgb(144, 53, 230);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border-bottom: 2px solid black;
-}
-
-.h1__titulo {
-    font-size: 60px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    color: white;
-    font-family: 'Secular One', sans-serif;
-    text-shadow: 3px 3px 3px rgba(0,0,0,0.53);
-}
-
-.h2__titulo {
-    font-size: 25px;
-    margin-bottom: 20px;
-    color: white;
-    font-family: 'Indie Flower', cursive;
-}
-
-.img__gatito {
-    height: 200px;
-    width: 200px;
-}
-
-.h2__main {
-    text-align: center;
-    margin: 50px;
-    font-size: 60px;
-    font-family: 'Indie Flower', cursive;
-    text-shadow: 3px 3px 3px rgba(0,0,0,0.53);
-}
-
-span {
-    color: blueviolet;
-}
-
-.h2__gatito {
-    color: black;
-    font-size: 35px;
-    font-family: 'Secular One', sans-serif;
-    margin-bottom: 60px;
-    text-align: center;
-}
-
-.saludos {
-    font-size: 30px;
-    font-family: 'Secular One', sans-serif;
-    text-align: center;
-    margin-bottom: 50px;
-    font-weight: bold;
-}
 
 /*JUEGO*/
+
+.h2__main {
+    font-size: 50px;
+}
+.saludos {
+    font-size: 25px;
+}
+.h2__gatito {
+    font-size: 40px;
+}
+
 
 .css-button-3d--black {
     min-width: 230px;
@@ -125,7 +179,6 @@ span {
     border: none;
     background: rgb(144, 53, 230);
     box-shadow: 1.5px 5px #212529;
-    font-family: 'Secular One', sans-serif;
     font-size: 25px;
     top: 50%;
     left: 50%;
@@ -143,9 +196,8 @@ span {
   }
 
 .round {
-    font-size: 40px;
+    font-size: 25px;
     color: rgb(144, 53, 230);
-    font-family: 'Secular One', sans-serif;
     text-align: center;
     margin-bottom: 50px;
     font-weight: bold;
@@ -153,13 +205,15 @@ span {
 
 .detalleVidaGatos{
     font-size: 20px;
-    font-family: 'Secular One', sans-serif;
     text-align: center;
 }
 
 .card__Gatito {
-    width: 650px;
-    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    height: 280px;
     background-color: rgb(144, 53, 230);
     margin: 0 auto;
     margin-bottom: 50px;
@@ -168,70 +222,59 @@ span {
 }
 
 .card__Gatito > img {
-    width: 500px;
-    height: 500px;
-    margin: 75px;
-    margin-top: 50px;
+    width: 200px;
+    height: 200px;
     border-radius: 5px;
+    margin-bottom: 30px;
+    object-fit: cover;
 }
 
 .contenedorCardFinal {
-    width: 850px;
-    height: 850px;
+    width: 300px;
+    height: 400px;
     margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 .card__Final {
-    width: 1000px;
-    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    height: 380px;
     background-color: rgb(144, 53, 230);
     margin: 0 auto;
-    margin-bottom: 50px;
     border-radius: 5px;
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.57);
 }
 
 .card__Final > img {
-    width: 700px;
-    height: 700px;
-    margin-left: 150px;
-    margin-top: 60px;
+    width: 260px;
+    height: 260px;
     border-radius: 5px;
 }
 
 .h2__card {
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
-    font-family: 'Secular One', sans-serif;
     padding-top: 10px;
 }
 
 .h2__cardFinal {
     color: white;
-    font-size: 50px;
+    font-size: 20px;
     text-align: center;
-    font-family: 'Secular One', sans-serif;
-    padding-top: 20px;
-    line-height: 70px;
+    padding-top: 10px;
 }
 
 .card__Final2{
-    height: 200px;
-    width: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding-top: 10px;
+
 }
 
 .h2__cardFinal--negro {
     color: black;
-    font-size: 40px;
+    font-size: 25px;
     text-align: center;
-    font-family: 'Secular One', sans-serif;
-    line-height: 70px;
     margin-top: 50px;
     margin-bottom: 50px;
 }
@@ -299,14 +342,213 @@ span {
     transform-origin: bottom left;
   }
 
+  @media (min-width: 500px) {
+
+    .round {
+        font-size: 25px;
+        margin-bottom: 50px;
+    }
+    
+    .detalleVidaGatos{
+        font-size: 20px;
+    }
+    
+    .card__Gatito {
+        width: 400px;
+        height: 350px;
+        margin-bottom: 50px;
+    }
+    
+    .card__Gatito > img {
+        width: 270px;
+        height: 280px;
+        margin-bottom: 30px;
+    }
+
+    .contenedorCardFinal {
+        width: 500px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card__Final {
+        width: 400px;
+        height: 380px;
+    
+    }
+    
+    .card__Final > img {
+        width: 290px;
+        height: 290px;
+        border-radius: 5px;
+    }
+
+}
+
+  @media (min-width: 768px) {
+    .h2__main {
+        font-size: 60px;
+    }
+    .saludos {
+        font-size: 30px;
+    }
+    .h2__gatito {
+        font-size: 40px;
+    }
+    .round {
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+    
+    .detalleVidaGatos{
+        font-size: 25px;
+    }
+    
+    .contenedorCardFinal{
+        padding-top: 20px;
+    }
+
+    .card__Gatito {
+        width: 600px;
+        height: 600px;
+        margin-bottom: 50px;
+    }
+    
+    .card__Gatito > img {
+        width: 500px;
+        height: 500px; 
+        margin-bottom: 30px;
+    }
+
+    .h2__card {
+        font-size: 31px;
+    }
+    
+    .h2__cardFinal {
+        color: white;
+        font-size: 35px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .contenedorCardFinal {
+        width: 768px;
+        height: 650px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card__Final {
+        width: 600px;
+        height: 600px;
+    }
+    
+    .card__Final > img {
+        width: 500px;
+        height: 500px;
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .h2__main {
+        font-size: 80px;
+    }
+    .saludos {
+        font-size: 35px;
+    }
+    .h2__gatito {
+        font-size: 40px;
+    }
+    .round {
+        font-size: 50px;
+    }
+    
+    .detalleVidaGatos{
+        font-size: 30px;
+    }
+    
+    .contenedorCardFinal{
+        padding-top: 20px;
+    }
+
+    .card__Gatito {
+        width: 700px;
+        height: 700px;
+        margin-bottom: 50px;
+    }
+    
+    .card__Gatito > img {
+        width: 600px;
+        height: 550px; 
+        margin-bottom: 30px;
+    }
+
+    .h2__card {
+        font-size: 45px;
+    }
+    
+    .h2__cardFinal {
+        font-size: 45px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .contenedorCardFinal {
+        width: 1100px;
+        height: 900px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card__Final {
+        width: 1000px;
+        height: 1000px;
+    
+    }
+    
+    .card__Final > img {
+        width: 700px;
+        height: 700px;
+    }
+
+    .h2__cardFinal--negro {
+        font-size: 40px;
+    }
+    .btnATienda span {
+        padding-bottom: 34px;
+        letter-spacing: 26px;
+        font-size: 44px;
+        padding-right: 30px;
+      }
+}
+
 /*TIENDA*/
+
+.contenedorBtnTienda {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.contenedorBtn--1200 {
+    display: none;
+}
 
 .btn {
     background-image: url(../img/carrito-de-compras.png);
     height: 64px;
     width: 64px;
     border: none;
-    background-color: transparent;   
+    background-color: transparent; 
+}
+
+.btn--1200 {
+    display: none;
 }
 
 .btn:hover {
@@ -336,7 +578,6 @@ span {
 
 .pCarrito {
     font-size: 20px;
-    font-family: 'Secular One', sans-serif;
     color: white;
     display: inline-block;
 }
@@ -362,7 +603,6 @@ body.dark-mode {
     color: black;
   }
   body.dark-mode button {
-    background-color: #ffffff;
     color: black;
   }
 
@@ -372,17 +612,19 @@ body.dark-mode {
     width: 64px;
     border: none;
     background-color: transparent;
-    margin-top: 20px;
-    margin-left: 90%;
 } 
 
 .btnDark:hover {
     transform: scale(1.01);
-} 
+}
+
+.btnDark--1200 {
+    display: none;
+}
 
 .card-img-top {
-    width: 450px;
-    height: 400px;
+    width: auto;
+    height: auto;
     border-bottom: 1px solid black;
 }
 
@@ -404,7 +646,8 @@ body.dark-mode {
 .carrito:hover {
     transform: scale(1.01);
 }
- .card {
+
+.card {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -412,4 +655,78 @@ body.dark-mode {
     transform: scale(1.01);
 }
 
+.dark-mode .btnDark  .btn {
+    background-color: rgb(144, 53, 230);
+}
+
+@media (min-width: 768px) {
+    .card {
+        height: 400px;
+    } 
+    .card-img-top {
+        height: 215px;
+    } 
+    .card-text {
+        font-size: 20px;
+    }
+    .card-title {
+        font-size: 20px;
+    }
+}
+@media (min-width: 1200px) {
+    .card {
+        height: 450px;
+    } 
+    .card-text {
+        font-size: 30px;
+    }
+    .card-title {
+        font-size: 30px;
+    }
+    .btn {
+        display: none;
+    }
+    .btnDark {
+        display: none;
+    }
+    .btn--1200 {
+        display: block;
+        background-image: url(../img/carrito-de-compras.png);
+        height: 64px;
+        width: 64px;
+        border: none;
+        background-color: transparent;
+    }
+    .btn--1200:hover {
+        transform: scale(1.01);
+    }
+    .btnDark--1200 {
+        display: block;
+        background-image: url(../img/drkmode.png);
+        height: 64px;
+        width: 64px;
+        border: none;
+        background-color: transparent;
+    }
+    .btnDark--1200:hover {
+        transform: scale(1.01);
+    }
+    .contenedorBtn--1200 {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .dark-mode .btnDark--1200  {
+        background-image: url(../img/drkMode2.png);
+    }
+    .dark-mode .btn--1200 {
+        background-image: url(../img/carrito-de-comprasDrk.png);
+    }
+    .card-img-top {
+        height: 250px;
+    } 
+}
 
