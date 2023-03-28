@@ -319,7 +319,7 @@ span {
 }
 
 .offcanvas-titleTienda {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     color: white;
 }
@@ -348,6 +348,10 @@ span {
     background-color: transparent;
     border: none;
     
+}
+
+.totalCarritoP {
+    font-size: 35px;
 }
 
 body.dark-mode {

@@ -288,7 +288,7 @@ if(location.pathname.includes('tienda.html')) {
             }
         ]
 
-        
+        let totalCarrito = 0;
 
         function generarIdCarrito() {
 
@@ -303,9 +303,14 @@ if(location.pathname.includes('tienda.html')) {
 
         }
         
+        function actualizarTotalCarrito () {
+            const totalCarritoP = document.querySelector('#totalCarrito');
+            totalCarritoP.textContent = `TOTAL - $${totalCarrito}`;
+        }
         
         function agregarCarrito () {
-        
+            
+
         for (i = 1; i <= tienda.length; i += 1) {
 
             const btnCarrito = document.querySelector(`#carrito${i}`);
@@ -316,15 +321,22 @@ if(location.pathname.includes('tienda.html')) {
                 let card = document.createElement("div");
                 card.classList.add("contenedorP");
                 const bodyCarrito = document.querySelector('#bodyCarrito');
+                
 
                 card.innerHTML = `<p class="pCarrito">${producto.item} - $${producto.precio}</p><button class="btnRemoveCarrito"></button>
                             `
                 bodyCarrito.appendChild(card);
+
+                totalCarrito += producto.precio;
+                actualizarTotalCarrito();
             
                 const btnRemoveCarrito = card.querySelector('.btnRemoveCarrito');
 
                 btnRemoveCarrito.addEventListener('click', function(){
                 bodyCarrito.removeChild(card);
+
+                totalCarrito -= producto.precio;
+                actualizarTotalCarrito();   
             });
             });
             } 
@@ -333,6 +345,7 @@ if(location.pathname.includes('tienda.html')) {
             
         generarIdCarrito();
         agregarCarrito();
+        actualizarTotalCarrito();
      
 }
 
