@@ -9,6 +9,12 @@
     font-family: 'Secular One', sans-serif;
 }
 
+a {
+    color: rgb(144, 53, 230);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
 /*ENCABEZADO*/
 
 header {
@@ -149,7 +155,6 @@ span {
 background: #fff;
 color: #212529;
 }
-
 
 /*JUEGO*/
 

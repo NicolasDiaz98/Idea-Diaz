@@ -1,6 +1,6 @@
 //LOGIN
 
-const formulario = document.querySelector('#formulario')
+const formulario = document.querySelector('#formulario');
 
 let usuarios = [];
 
@@ -11,10 +11,26 @@ const agregarUsuario = (evt) => {
     const contraseña = document.querySelector('#loginPassword').value;
 
     if (nombre == '') {
-        console.log('Usuario incorrecto');
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Usuario incorrecto',
+            showConfirmButton: false,
+            color: 'rgb(144, 53, 230)',
+            background: '#fff',
+            timer: 1500
+          })
         return;
     }else if(contraseña == '') {
-        console.log('Contraseña incorrecta')
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Contraseña incorrecta',
+            showConfirmButton: false,
+            color: 'rgb(144, 53, 230)',
+            background: '#fff',
+            timer: 1500
+          })
         return;
     }
 
@@ -33,6 +49,16 @@ const agregarUsuario = (evt) => {
         sessionStorage.setItem('nombreDeUsuario', nombre);
         location.href = "juego.html"
     },2000)
+
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Login correcto',
+        showConfirmButton: false,
+        color: 'rgb(144, 53, 230)',
+        background: '#fff',
+        timer: 1500
+      })
 }
  
 if (formulario) {
@@ -68,10 +94,13 @@ if(location.pathname.includes('juego.html')) {
     const salvarGatito = 0;
     const muereGatito = 2;
 
-    const boton = document.querySelector('#boton')
+    const boton = document.querySelector('#boton');
+
 //FINAL VARIABLES
 
 boton.addEventListener('click', function() {
+
+    boton.remove();
 
     for ( round = 1; round < 6; round +=1) {
 
@@ -317,6 +346,23 @@ if(location.pathname.includes('tienda.html')) {
 
             btnCarrito.addEventListener('click', function() {
                 
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 1000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.addEventListener('mouseenter', Swal.stopTimer)
+                      toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                  })
+                  
+                  Toast.fire({
+                    icon: 'success',
+                    title: 'Agregado al carrito'
+                  })
+
                 let card = document.createElement("div");
                 card.classList.add("contenedorP");
                 const bodyCarrito = document.querySelector('#bodyCarrito');
@@ -332,6 +378,24 @@ if(location.pathname.includes('tienda.html')) {
                 const btnRemoveCarrito = card.querySelector('.btnRemoveCarrito');
 
                 btnRemoveCarrito.addEventListener('click', function(){
+
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 1000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                          toast.addEventListener('mouseenter', Swal.stopTimer)
+                          toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                      })
+                      
+                      Toast.fire({
+                        icon: 'error',
+                        title: 'Eliminado correctamente'
+                      })
+
                 bodyCarrito.removeChild(card);
 
                 totalCarrito -= producto.precio;
