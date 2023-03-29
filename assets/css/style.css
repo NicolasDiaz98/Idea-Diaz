@@ -272,10 +272,6 @@ color: #212529;
     padding-top: 10px;
 }
 
-.card__Final2{
-
-}
-
 .h2__cardFinal--negro {
     color: black;
     font-size: 25px;
@@ -656,10 +652,6 @@ body.dark-mode {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.card:hover {
-    transform: scale(1.01);
-}
-
 .dark-mode .btnDark  .btn {
     background-color: rgb(144, 53, 230);
 }
@@ -676,6 +668,9 @@ body.dark-mode {
     }
     .card-title {
         font-size: 20px;
+    }
+    .card:hover {
+        transform: scale(1.01);
     }
 }
 @media (min-width: 1200px) {
@@ -733,5 +728,8 @@ body.dark-mode {
     .card-img-top {
         height: 250px;
     } 
+    .card:hover {
+        transform: scale(1.01);
+    }
 }
 
