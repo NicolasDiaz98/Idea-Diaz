@@ -338,16 +338,47 @@ if(location.pathname.includes('tienda.html')) {
         
         function agregarCarrito () {
             
-        
-        if (window.innerWidth < 1000) {
 
-            for (i = 1; i <= tienda.length; i += 1) {
+        for (i = 1; i <= tienda.length; i += 1) {
 
-                const btnCarrito = document.querySelector(`#carrito${i}`);
-                const producto = JSON.parse(localStorage.getItem(`carrito${i}`));
-    
-                btnCarrito.addEventListener('touchstart', function() {
-                    
+            const btnCarrito = document.querySelector(`#carrito${i}`);
+            const producto = JSON.parse(localStorage.getItem(`carrito${i}`));
+
+            btnCarrito.addEventListener('click', function() {
+                
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 1000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.addEventListener('mouseenter', Swal.stopTimer)
+                      toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                  })
+                  
+                  Toast.fire({
+                    icon: 'success',
+                    title: 'Agregado al carrito'
+                  })
+
+                let card = document.createElement("div");
+                card.classList.add("contenedorP");
+                const bodyCarrito = document.querySelector('#bodyCarrito');
+                
+
+                card.innerHTML = `<p class="pCarrito">${producto.item} - $${producto.precio}</p><button class="btnRemoveCarrito"></button>
+                            `
+                bodyCarrito.appendChild(card);
+
+                totalCarrito += producto.precio;
+                actualizarTotalCarrito();
+            
+                const btnRemoveCarrito = card.querySelector('.btnRemoveCarrito');
+
+                btnRemoveCarrito.addEventListener('click', function(){
+
                     const Toast = Swal.mixin({
                         toast: true,
                         position: 'top-end',
@@ -361,118 +392,17 @@ if(location.pathname.includes('tienda.html')) {
                       })
                       
                       Toast.fire({
-                        icon: 'success',
-                        title: 'Agregado al carrito'
+                        icon: 'error',
+                        title: 'Eliminado correctamente'
                       })
-    
-                    let card = document.createElement("div");
-                    card.classList.add("contenedorP");
-                    const bodyCarrito = document.querySelector('#bodyCarrito');
-                    
-    
-                    card.innerHTML = `<p class="pCarrito">${producto.item} - $${producto.precio}</p><button class="btnRemoveCarrito"></button>
-                                `
-                    bodyCarrito.appendChild(card);
-    
-                    totalCarrito += producto.precio;
-                    actualizarTotalCarrito();
-                
-                    const btnRemoveCarrito = card.querySelector('.btnRemoveCarrito');
-    
-                    btnRemoveCarrito.addEventListener('touchstart', function(){
-    
-                        const Toast = Swal.mixin({
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 1000,
-                            timerProgressBar: true,
-                            didOpen: (toast) => {
-                              toast.addEventListener('mouseenter', Swal.stopTimer)
-                              toast.addEventListener('mouseleave', Swal.resumeTimer)
-                            }
-                          })
-                          
-                          Toast.fire({
-                            icon: 'error',
-                            title: 'Eliminado correctamente'
-                          })
-    
-                    bodyCarrito.removeChild(card);
-    
-                    totalCarrito -= producto.precio;
-                    actualizarTotalCarrito();   
-                });
-                });
-                } 
-        } else {
-            for (i = 1; i <= tienda.length; i += 1) {
 
-                const btnCarrito = document.querySelector(`#carrito${i}`);
-                const producto = JSON.parse(localStorage.getItem(`carrito${i}`));
-    
-                btnCarrito.addEventListener('click', function() {
-                    
-                    const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 1000,
-                        timerProgressBar: true,
-                        didOpen: (toast) => {
-                          toast.addEventListener('mouseenter', Swal.stopTimer)
-                          toast.addEventListener('mouseleave', Swal.resumeTimer)
-                        }
-                      })
-                      
-                      Toast.fire({
-                        icon: 'success',
-                        title: 'Agregado al carrito'
-                      })
-    
-                    let card = document.createElement("div");
-                    card.classList.add("contenedorP");
-                    const bodyCarrito = document.querySelector('#bodyCarrito');
-                    
-    
-                    card.innerHTML = `<p class="pCarrito">${producto.item} - $${producto.precio}</p><button class="btnRemoveCarrito"></button>
-                                `
-                    bodyCarrito.appendChild(card);
-    
-                    totalCarrito += producto.precio;
-                    actualizarTotalCarrito();
-                
-                    const btnRemoveCarrito = card.querySelector('.btnRemoveCarrito');
-    
-                    btnRemoveCarrito.addEventListener('click', function(){
-    
-                        const Toast = Swal.mixin({
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 1000,
-                            timerProgressBar: true,
-                            didOpen: (toast) => {
-                              toast.addEventListener('mouseenter', Swal.stopTimer)
-                              toast.addEventListener('mouseleave', Swal.resumeTimer)
-                            }
-                          })
-                          
-                          Toast.fire({
-                            icon: 'error',
-                            title: 'Eliminado correctamente'
-                          })
-    
-                    bodyCarrito.removeChild(card);
-    
-                    totalCarrito -= producto.precio;
-                    actualizarTotalCarrito();   
-                });
-                });
-                } 
-        }
+                bodyCarrito.removeChild(card);
 
-        
+                totalCarrito -= producto.precio;
+                actualizarTotalCarrito();   
+            });
+            });
+            } 
         }   
 
             
