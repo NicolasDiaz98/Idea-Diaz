@@ -1,0 +1,70 @@
+[
+    {
+        "item": "Cama",
+        "precio": 2000
+    },
+    {
+        "item": "Cama de lana",
+        "precio": 2500
+    },
+    {
+        "item": "Cama de seda",
+        "precio": 3000
+    },
+    {
+        "item": "Manta de seda",
+        "precio": 800
+    },
+    {
+        "item": "Manta de lana",
+        "precio": 500
+    },
+    {
+        "item": "Juguete pelota",
+        "precio": 150
+    },
+    {
+        "item": "Juguete rascador",
+        "precio": 200
+    },
+    {
+        "item": "Juguete cuerda",
+        "precio": 80
+    },
+    {
+        "item": "Kit de juguetes",
+        "precio": 400
+    },
+    {
+        "item": "Shampoo",
+        "precio": 250
+    },
+    {
+        "item": "Shampoo especial",
+        "precio": 500
+    },
+    {
+        "item": "Tratamiento de pelaje",
+        "precio": 400
+    },
+    {
+        "item": "Ropa",
+        "precio": 300
+    },
+    {
+        "item": "Zapatos",
+        "precio": 200
+    },
+    {
+        "item": "Casa tamaño pequeño",
+        "precio": 6000
+    }, 
+    {
+        "item": "Casa tamaño mediano",
+        "precio": 9000
+    },
+    {
+        "item": "Casa tamaño grande",
+        "precio": 12000
+    }
+]

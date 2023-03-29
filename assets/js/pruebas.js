@@ -10,29 +10,19 @@ const agregarUsuario = (evt) => {
     const nombre = document.querySelector('#loginUsuario').value;
     const contraseña = document.querySelector('#loginPassword').value;
 
-    if (nombre == '') {
+    if (nombre == '' || contraseña == '') {
+        const mensaje = nombre == '' ? 'Usuario incorrecto' : 'Contraseña incorrecta';
         Swal.fire({
-            position: 'center',
-            icon: 'error',
-            title: 'Usuario incorrecto',
-            showConfirmButton: false,
-            color: 'rgb(144, 53, 230)',
-            background: '#fff',
-            timer: 1500
-          })
+          position: 'center',
+          icon: 'error',
+          title: mensaje,
+          showConfirmButton: false,
+          color: 'rgb(144, 53, 230)',
+          background: '#fff',
+          timer: 1500
+        });
         return;
-    }else if(contraseña == '') {
-        Swal.fire({
-            position: 'center',
-            icon: 'error',
-            title: 'Contraseña incorrecta',
-            showConfirmButton: false,
-            color: 'rgb(144, 53, 230)',
-            background: '#fff',
-            timer: 1500
-          })
-        return;
-    }
+      }
 
     const usuarioObj = {
         id: nombre,
@@ -245,76 +235,14 @@ if(location.pathname.includes('tienda.html')) {
         }
 
 
-        const tienda = [
-            {
-                item: 'Cama',
-                precio: 2000
-            },
-            {
-                item: 'Cama de lana',
-                precio: 2500
-            },
-            {
-                item: 'Cama de seda',
-                precio: 3000
-            },
-            {
-                item: 'Manta de seda',
-                precio: 800
-            },
-            {
-                item: 'Manta de lana',
-                precio: 500
-            },
-            {
-                item: 'Juguete pelota',
-                precio: 150
-            },
-            {
-                item: 'Juguete rascador',
-                precio: 200
-            },
-            {
-                item: 'Juguete cuerda',
-                precio: 80
-            },
-            {
-                item: 'Kit de juguetes',
-                precio: 400
-            },
-            {
-                item: 'Shampoo',
-                precio: 250
-            },
-            {
-                item: 'Shampoo especial',
-                precio: 500
-            },
-            {
-                item: 'Tratamiento de pelaje',
-                precio: 400
-            },
-            {
-                item: 'Ropa',
-                precio: 300
-            },
-            {
-                item: 'Zapatos',
-                precio: 200
-            },
-            {
-                item: 'Casa tamaño pequeño',
-                precio: 6000
-            }, 
-            {
-                item: 'Casa tamaño mediano',
-                precio: 9000
-            },
-            {
-                item: 'Casa tamaño grande',
-                precio: 12000
-            }
-        ]
+        let tienda = [];
+
+        fetch('./assets/js/data.json')
+        .then(res => res.json())
+        .then(data => {
+            tienda = data;
+            
+          
 
         let totalCarrito = 0;
 
@@ -409,6 +337,8 @@ if(location.pathname.includes('tienda.html')) {
         generarIdCarrito();
         agregarCarrito();
         actualizarTotalCarrito();
-     
+
+        })
+        .catch(error => console.error(error));
 }
 
