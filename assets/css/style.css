@@ -642,6 +642,7 @@ body.dark-mode {
     border: none;
     background-color: transparent;
     margin: 0 auto;
+    z-index: 10;
 }
 
 .carrito:hover {
